@@ -22,26 +22,26 @@ function loadPokemonItens(offset, limit) {
                     </div>
                 </li>
             </a>
-        <dialog id="abrirModal ${pokemon.name}" class="pokeModal ${pokemon.name}">
-            <div>
-            <h2>${pokemon.name}</h2>
-            </div>
+        <dialog id="abrirModal ${pokemon.name}" class="pokeModal ${pokemon.name} ${pokemon.type}"> 
+            <h2>${pokemon.name}</h2>   
+            <button>x</button>
+            
         </dialog>`)
             .join('')
-            pokemonList.innerHTML += newHtml;
+        pokemonList.innerHTML += newHtml;
 
 
-            const modalButton = document.getElementsByClassName("abrirModal")
-            const modalPokemon = document.getElementsByClassName("pokeModal")
+        const modalButton = document.getElementsByClassName("abrirModal")
+        const modalPokemon = document.getElementsByClassName("pokeModal")
 
-            for (let i = 0; i < modalButton.length; i++) {
-                modalButton[i].addEventListener('click', ()=>{
-                    modalPokemon[i].showModal()
-                })
-                
-              }
-                
-    })    
+        for (let i = 0; i < modalButton.length; i++) {
+            modalButton[i].addEventListener('click', () => {
+                modalPokemon[i].showModal()
+            })
+
+        }
+
+    })
 }
 
 
