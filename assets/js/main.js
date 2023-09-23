@@ -24,7 +24,7 @@ function loadPokemonItens(offset, limit) {
             </a>
         <dialog id="abrirModal ${pokemon.name}" class="pokeModal ${pokemon.name}">
             <div>
-            <h2>${pokemon.name}</h2>
+                <h2>${pokemon.name}</h2>
             </div>
         </dialog>`)
             .join('')
