@@ -7,6 +7,12 @@
    grid-template-columns: 1fr;
 }
 
+.separador {
+   border: none; 
+   height: 2px; 
+   background-color: rgba(0, 0, 0, 0.15); 
+   margin: 10px 0; 
+}
 .normal {
    background-color: #a6a877;
 }
@@ -120,7 +126,7 @@
    list-style: none;
 }
 
-.pokemon .detail .types .type {
+.pokemon .detail .types .type  {
    color: #fff;
    padding: 0.25rem 0.5rem;
    margin: 0.25rem 0;
@@ -158,27 +164,30 @@
    cursor: pointer;
 }
 
-
-
-
 dialog {
    outline: none;
    border: none;
-   background-color: rgba(0, 0, 0, .5);
    box-shadow: 0px 0px 10px rgba(0, 0, 0, .7);
    border-radius: 0.5rem;
    height: 600px;
    width: 300px;
 }
 
-dialog div {
+dialog .head {
+   margin: .25rem 0 0 0;
    display: flex;
    justify-content: space-between;
+   align-items: center;
+   padding: 0 0 0 5.25rem;
 }
 
-dialog div button {
+
+dialog .head button {
+   padding: 0 0 0 0;
+   outline: none;
    background-color: inherit;
-   height: 30px;
+   width: 1.75rem;
+   height: 1.75rem;
    margin: 0 0 0 0;
    border-radius: .55rem;
    color: #000;
@@ -186,12 +195,64 @@ dialog div button {
 }
 
 dialog div h2 {
+   text-shadow: -2px -2px 5px #000, 2px 2px 5px #000;
    text-transform: capitalize;
-   margin: 0 0 0 1rem;
+   margin: 0 0 0 0;
    text-align: center;
    color: #fff;
-   display: inline-flex;
 }
+
+.modalImg{
+   display: block;
+   margin: 1.5rem 0 0 3.5rem;
+   height: 5rem;
+   width: 10rem;
+}
+
+dialog .types{
+   text-transform: capitalize;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 0;
+   margin: 1rem 0 1rem 0;
+   list-style: none;
+}
+
+dialog .types .type{
+   box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+   color: #fff;
+   padding: 0.25rem 0.5rem;
+   margin: 0 0 0 .55rem;
+   font-size: .8rem;
+   border-radius: 1rem;
+   filter: brightness(1.075);
+   text-align: center;
+
+}
+
+.moves h3, .stats h3{
+   text-shadow: -2px -2px 5px #000, 2px 2px 5px #000;
+   text-transform: capitalize;
+   margin: 1rem 0 .4rem 1rem;
+   text-align: center;
+   color: #fff;
+}
+
+.movesList, .statsList{
+   list-style-type: none;
+   text-align: center;
+   padding: 0 0 .3rem 17px;
+   text-transform: capitalize;
+   color: #fff;
+}
+
+.movesList li, .statsList li{
+   text-shadow: -2px -2px 5px #000, 2px 2px 5px #000;
+   font-size: small;
+   margin: 0 0 .2rem 0;
+}
+
 
 @media screen and (min-width: 380px) {
    .pokemons {

@@ -23,9 +23,27 @@ function loadPokemonItens(offset, limit) {
                 </li>
             </a>
         <dialog id="abrirModal ${pokemon.name}" class="pokeModal ${pokemon.name} ${pokemon.type}"> 
-            <div>    
+            <div class="head">    
                 <h2>${pokemon.name}</h2>   
-                <button>x</button>
+                <button class="closeModal ${pokemon.name}">x</button>
+            </div>
+            <img class="modalImg" src="${pokemon.photo}" alt="${pokemon.name}">
+            <ol class="types">
+            ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
+                </ol>
+            <hr class='separador'>
+            <div class="stats">
+                <h3>Stats</h3>
+                <ol class="statsList">
+                    ${pokemon.stats.map((stat) => `<li>${stat.replace('-', ' ')}</li>`).join('')}
+                </ol>
+            </div>
+            <hr class="separador">
+            <div class="moves">
+                <h3>Moves</h3>
+                <ol class="movesList">
+                    ${pokemon.moves.map((move) => `<li>${move.replace('-', ' ')}</li>`).join('')}
+                </ol>    
             </div>
         </dialog>`)
             .join('')
@@ -34,14 +52,20 @@ function loadPokemonItens(offset, limit) {
 
         const modalButton = document.getElementsByClassName("abrirModal")
         const modalPokemon = document.getElementsByClassName("pokeModal")
+        const closeModal = document.getElementsByClassName("closeModal")
 
         for (let i = 0; i < modalButton.length; i++) {
             modalButton[i].addEventListener('click', () => {
                 modalPokemon[i].showModal()
             })
-
         }
 
+        for (let i = 0; i < closeModal.length; i++){
+            closeModal[i].addEventListener('click', ()=> {
+                modalPokemon[i].close()
+            })
+        }
+        
     })
 }
 
